@@ -17,7 +17,7 @@ class getTableData():
         
 
 #service client resource created
-dynamodb = boto3.resource('dynamodb',aws_access_key_id = 'AKIA23MXWJBNNPLG4Q63', aws_secret_access_key = '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', region_name = 'us-east-2')
+dynamodb = boto3.resource('dynamodb',aws_access_key_id = <enter the access_key_id>, aws_secret_access_key = <enter the aws_secret_key_id>, region_name = 'us-east-2')
 
 #resource for dynamodb table
 tableStore = dynamodb.Table('A0179720Y_Table2') 
@@ -42,16 +42,4 @@ with open('tabledata.csv','w',newline = '\n') as csvfile:
         inp = json.loads(json.dumps(i, cls=getTableData))
         storeData.append(inp)
         SortData = sorted(storeData,key=itemgetter('Timestamp'))
-        writer.writerow(SortData)
-
-
-
-
-
-
-
-
-
-
-
-    
+        writer.writerow(SortData)    
